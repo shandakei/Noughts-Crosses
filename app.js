@@ -35,8 +35,8 @@ const gameScreen = document.querySelector('.game-screen')
 
 // -----------------------------------------------------------
 
-
-const squareClass = document.querySelectorAll('.square')
+//globals
+const squareClassAll = document.querySelectorAll('.square')
 const s1 = document.querySelector('.s1')
 const s2 = document.querySelector('.s2')
 const s3 = document.querySelector('.s3')
@@ -47,8 +47,25 @@ const s7 = document.querySelector('.s7')
 const s8 = document.querySelector('.s8')
 const s9 = document.querySelector('.s9')
 const resultClass = document.querySelector('.result')
+const resetBtn = document.querySelector('.reset')
+const xScore = document.querySelector('.x-score')
+const oScore = document.querySelector('.o-score')
+const roundsClass = document.querySelector('.rounds')
+const roundsCountSpan = document.querySelector('.rounds-count')
 
-for (let cell of squareClass) {
+let clickCount = 0
+let xCount = 0
+let oCount = 0
+let roundCount = 1 
+
+
+
+
+//ELs
+resetBtn.addEventListener('click', resetGrid)
+// resetBtn.addEventListener('click', roundCountIncrease)
+
+for (let cell of squareClassAll) {
     cell.addEventListener('click', switchXO) 
 }
 
@@ -62,73 +79,131 @@ function switchXO(event) {        //update to make use of Xchocie and Ochoice //
             currentPlayer = "O"
         } else {
             currentPlayer = "X"
-        }
-       
-             
+        }            
        
     victory();
-console.log("switch"); /////////////////////
+console.log("switch");                                                           /////////////////////
 }
 
 
-function resultAppear() {
-    resultClass.style.visibility = 'visible'    
-    console.log("resultAppear");        //////////////////////
+function handleCount() {
+    clickCount++
 }
 
 
 function victory() {             //txtcontent here not at top cos text hasn't been updated till here ctrl+d ddddd = multicursor
 
-        squareClass.forEach(cell => {
+        squareClassAll.forEach(cell => {
+            cell,addEventListener('click', handleCount)
             cell.addEventListener('click', () => {  
     
                 switch (true) {
                     case (s1.textContent === 'X' && s2.textContent === 'X' && s3.textContent === 'X'):
                     case (s1.textContent === 'O' && s2.textContent === 'O' && s3.textContent === 'O'):
-                        console.log('123');
+                        s1.style.textDecoration = 'line-through'
+                        s2.style.textDecoration = 'line-through'
+                        s3.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s4.textContent === 'X' && s5.textContent === 'X' && s6.textContent === 'X'):
                     case (s4.textContent === 'O' && s5.textContent === 'O' && s6.textContent === 'O'):
-                        console.log('456');
+                        s4.style.textDecoration = 'line-through'                               
+                        s5.style.textDecoration = 'line-through'                               
+                        s6.style.textDecoration = 'line-through'                               
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s7.textContent === 'X' && s8.textContent === 'X' && s9.textContent === 'X'):
                     case (s7.textContent === 'O' && s8.textContent === 'O' && s9.textContent === 'O'):
-                        console.log('789');
+                        s7.style.textDecoration = 'line-through'
+                        s8.style.textDecoration = 'line-through'
+                        s9.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s1.textContent === 'X' && s4.textContent === 'X' && s7.textContent === 'X'):
                     case (s1.textContent === 'O' && s4.textContent === 'O' && s7.textContent === 'O'):
-                        console.log('147');
+                        s1.style.textDecoration = 'line-through'
+                        s4.style.textDecoration = 'line-through'
+                        s7.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s2.textContent === 'X' && s5.textContent === 'X' && s8.textContent === 'X'):
                     case (s2.textContent === 'O' && s5.textContent === 'O' && s8.textContent === 'O'):
-                        console.log('258');
+                        s2.style.textDecoration = 'line-through'
+                        s5.style.textDecoration = 'line-through'
+                        s8.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s3.textContent === 'X' && s6.textContent === 'X' && s9.textContent === 'X'):
                     case (s3.textContent === 'O' && s6.textContent === 'O' && s9.textContent === 'O'):
-                        console.log('369');
+                        s3.style.textDecoration = 'line-through'
+                        s6.style.textDecoration = 'line-through'
+                        s9.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s1.textContent === 'X' && s5.textContent === 'X' && s9.textContent === 'X'):
                     case (s1.textContent === 'O' && s5.textContent === 'O' && s9.textContent === 'O'):
-                        console.log('159');
+                        s1.style.textDecoration = 'line-through'
+                        s5.style.textDecoration = 'line-through'
+                        s9.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
                     case (s3.textContent === 'X' && s5.textContent === 'X' && s7.textContent === 'X'):
                     case (s3.textContent === 'O' && s5.textContent === 'O' && s7.textContent === 'O'):
-                        console.log('357');
+                        s3.style.textDecoration = 'line-through'
+                        s5.style.textDecoration = 'line-through'
+                        s7.style.textDecoration = 'line-through'
                         resultAppear();        
+                        resetAppear()
                         break;
-
-                    default: resultAppear() 
+                    case (clickCount === 8):
+                        console.log("It's a draw");
+                        resetAppear()
+                        break;
+                    default: null
+                        ////////////////////////////////////FIX///////////////////// 
                         
                     
                 }
             })
-        })
-    console.log("victory function");      /////////////////////////////
+        })    
 }
+
+function resetAppear() {
+
+    if (clickCount === 8) {
+        resetBtn.style.visibility = 'visible'
+    }
+    
+}
+
+function resetGrid() {
+    for (let cell of squareClassAll){
+    cell.textContent = '';
+    cell.style.textDecoration = '';
+    }
+    resultClass.style.visibility = 'hidden'
+    roundsClass.style.display = 'initial'
+    clickCount = 0;
+    roundCountIncrease();  
+
+}
+
+function resultAppear() {
+    resultClass.style.visibility = 'visible'
+    roundsClass.style.display = 'none'
+    console.log("Result + Victory");                                             //////////////////////
+}
+
+function roundCountIncrease() {
+
+    roundCount++
+    roundsCountSpan.innerText = roundCount
+}
+

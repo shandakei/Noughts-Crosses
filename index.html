@@ -17,9 +17,10 @@
     <!-- </div> start-screen -->
 
 
-    <div class="game-screen">
+    <div class="game-screen"> <!--make div or divs to display score...can increase count based on how many times game is reset-->
 
-        <h3></h3>
+        <h3 class="scoreAll">Crosses wins: <span class = 'x-score'>0</span></h3>
+        <h3 class="scoreAll">Noughts wins: <span class = 'o-score'>0</span></h3>
         
         <div class="game-grid">
             <div class="square s1"></div>
@@ -33,6 +34,9 @@
             <div class="square s9"></div>
 
         </div> <!--game-grid-->
+
+        <h3 class="rounds">Round: <span class = 'rounds-count'>1</span></h3>
+
         <br>
         <div class="result">
             <h3>Victory!</h3>

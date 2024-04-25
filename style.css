@@ -21,10 +21,10 @@
     align-items: center;
 } */
 
-.game-screen {
-    display: grid;
+.game-screen {                               /*use to center grid and space for wins count or game rounds */
+    display: flex;
     justify-content: center;
-    grid-template-columns: 1fr 2fr;
+    flex-direction: column;
     align-items: center;
     border: 3px solid black; 
     margin: 0 auto;
@@ -67,10 +67,25 @@
     
     visibility: hidden;
     background-size: cover;
-    background-color: blue;
+    background-color: rgb(0, 0, 0);;
+    color: whitesmoke;
 }
 .result h3 {
     font-size: 4rem;
-    text-decoration-line: line-through;
+    /* text-decoration-line: line-through; */
     color: red;
 }
+
+/* play again/reset button (use span around button too for use in case of draw*/
+.reset {
+    visibility: inherit;
+    font-size: 2rem;
+
+}.rounds {
+    display: initial;
+}
+
+.rounds-count {
+    display: initial;
+}
+

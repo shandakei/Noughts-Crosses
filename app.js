@@ -190,6 +190,7 @@ function resetGrid() {
     cell.textContent = '';
     cell.style.textDecoration = '';
     }
+    resetBtn.style.visibility = 'hidden'
     resultClass.style.visibility = 'hidden'
     roundsClass.style.display = 'initial'
     clickCount = 0;
@@ -200,6 +201,7 @@ function resetGrid() {
 
 function resultAppear() {
     resultClass.style.visibility = 'visible'
+    resetBtn.style.visibility = 'visible'
     roundsClass.style.display = 'none'
     console.log("Result + Victory");                                             //////////////////////
 }
@@ -212,7 +214,7 @@ function roundCountIncrease() {
 
 
 
-
+// --------------------------------------------------------------------------------------
 function scoreUpdateX() {
     xCount = ((clickCount + 1) - clickCount)
     // xCount++

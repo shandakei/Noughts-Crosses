@@ -98,7 +98,7 @@ h1 {
 
 
 .reset {
-    visibility: inherit;
+    visibility: hidden;
     font-size: 3rem;
     margin: 0px 0px 70px 0px;
     font-family: "Jersey 25", sans-serif;

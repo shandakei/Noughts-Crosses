@@ -20,72 +20,151 @@
     justify-content: center;
     align-items: center;
 } */
+/* .backgroundPixel {
+    background-image: url("media/20495-310204614_small1-ezgif.com-video-to-gif-converter.gif");
+    background-size: cover;
+    background-position: center;
+} */
 
-.game-screen {                               /*use to center grid and space for wins count or game rounds */
+.game-screen {  
+    background-image: url("media/20495-310204614_small1-ezgif.com-video-to-gif-converter.gif");                             /*use to center grid and space for wins count or game rounds */
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    border: 3px solid black; 
+    border: 15px solid black; 
     margin: 0 auto;
+}
+
+body {  
+    background-image: url("media/20495-310204614_small1-ezgif.com-video-to-gif-converter.gif");                             /*use to center grid and space for wins count or game rounds */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 40px solid black; 
+    margin: 0 auto;
+    max-width: auto;
+    max-height: auto;
+}
+
+h1 {
+    font-size: 5rem;
+    font-family: "Rubik Broken Fax", system-ui;
 }
 
 .game-grid {
     display: grid;
-    grid-template-columns: 100px 100px 100px;
-    grid-template-rows: 100px 100px 100px;
-    /* text-align: center; */
-    border: 1px solid red;
-
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+    padding: 25px 0px;
+    opacity: 150%;
 }
-
 .game-grid div {
     display: grid;
-    
-    border: 1px solid black;
+}
+.gamegrid h3 {
+    font-size: 3rem;
 }
 
 .square {
-    border: 1px solid black;   
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 3rem;
+    font-size: 5rem;
+    font-weight: bold;
     width: auto;
     height: auto;
-    /* color: solid black; */
-    /* background-color: dark gray; */
-
 }
 .square div {
     margin:auto;
-    
-
 }
 
 .result {
-    
     visibility: hidden;
     background-size: cover;
-    background-color: rgb(0, 0, 0);;
-    color: whitesmoke;
-}
-.result h3 {
-    font-size: 4rem;
-    /* text-decoration-line: line-through; */
-    color: red;
+    justify-content: center;
+    text-align:center;
+    font-family: "Jersey 25", sans-serif;
+    background-color: rgba(0, 0, 0, 0.356);
+    color: goldenrod;
+    font-size: 6rem;
 }
 
-/* play again/reset button (use span around button too for use in case of draw*/
+
+
 .reset {
     visibility: inherit;
-    font-size: 2rem;
-
-}.rounds {
-    display: initial;
+    font-size: 3rem;
+    margin: 0px 0px 70px 0px;
+    font-family: "Jersey 25", sans-serif;
+    background-color: rgba(0, 0, 0, 0.356);
+    color: goldenrod;
+    size: 10rem;
 }
 
+.rounds {
+    display: initial;
+    font-family: "Jersey 25", sans-serif;
+    font-size: 5rem;
+}
 .rounds-count {
     display: initial;
 }
 
+
+.s1 {
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+}
+.s2 {
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+.s3 {
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+.s4 {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+}
+.s5 {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+.s6 {
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+    border-left: 5px solid black;
+}
+.s7 {
+    border-top: 5px solid black;
+    border-right: 5px solid black;
+}
+.s8 {
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+    border-right: 5px solid black;
+}
+.s9 {
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+}
+
+.audio {
+    float: left;
+    
+}
+
+.material-symbols-outlined {
+    size: 200px;
+}

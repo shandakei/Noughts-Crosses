@@ -63,7 +63,8 @@ let roundCount = 1
 
 //ELs
 resetBtn.addEventListener('click', resetGrid)
-// resetBtn.addEventListener('click', roundCountIncrease)
+resetBtn.addEventListener('click', scoreUpdateX)
+// resetBtn.addEventListener('click', scoreUpdateO)
 
 for (let cell of squareClassAll) {
     cell.addEventListener('click', switchXO) 
@@ -94,6 +95,7 @@ function handleCount() {
 function victory() {             //txtcontent here not at top cos text hasn't been updated till here ctrl+d ddddd = multicursor
 
         squareClassAll.forEach(cell => {
+            
             cell,addEventListener('click', handleCount)
             cell.addEventListener('click', () => {  
     
@@ -192,6 +194,7 @@ function resetGrid() {
     roundsClass.style.display = 'initial'
     clickCount = 0;
     roundCountIncrease();  
+    // xScore.innerText = xCount
 
 }
 
@@ -207,3 +210,26 @@ function roundCountIncrease() {
     roundsCountSpan.innerText = roundCount
 }
 
+
+
+
+function scoreUpdateX() {
+    xCount = ((clickCount + 1) - clickCount)
+    // xCount++
+    xScore.innerText = xCount
+}
+function scoreUpdateO() {
+    oCount = ((clickCount + 1) - clickCount)
+    // oCount++
+    oScore.innerText = oCount
+}
+//                                                        dont forget @MEDIA requirements
+// @(min-width: 1000px) {
+
+// }
+
+
+
+
+
+//             make the README.txt

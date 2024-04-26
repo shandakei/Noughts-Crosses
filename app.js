@@ -1,41 +1,9 @@
 console.log('xoxoxo');
-//buttons global
-// const startBtn = document.querySelector('.start-btn')
-//screen global
-// const startScreen = document.querySelector('.start-screen')
-const gameScreen = document.querySelector('.game-screen')
-//screen EL's
-// startBtn.addEventListener('click', switchScreen)
 
 
-// //start button function
-
-// function switchScreen() {
-    
-
-//     if (startScreen.style.display !== 'grid') {
-//         gameScreen.style.display = 'none'
-//     } else {
-//         startScreen.style.display === 'none'
-//         gameScreen.style.display = 'flex'
-//     }
-
-// }
-
-
-
-
-
-// if (startScreen.style.visibility !== 'grid') {
-//     gameScreen.style.visibility = 'hidden'
-// } else {
-//     startScreen.style.visibility = 'hidden'
-//     gameScreen.style.visibility = 'visible'
-// }
-
-// -----------------------------------------------------------
 
 //globals
+const gameScreen = document.querySelector('.game-screen')
 const squareClassAll = document.querySelectorAll('.square')
 const s1 = document.querySelector('.s1')
 const s2 = document.querySelector('.s2')
@@ -66,16 +34,15 @@ let roundCount = 1
 //ELs
 startBtn.addEventListener('click', startScreenRemove)
 resetBtn.addEventListener('click', resetGrid)
-// resetBtn.addEventListener('click', scoreUpdateX)
-// resetBtn.addEventListener('click', scoreUpdateO)
+
 
 for (let cell of squareClassAll) {
     cell.addEventListener('click', switchXO) 
 }
 
-let currentPlayer = "X" //update string to X or O 
+let currentPlayer = "X" 
 
-function switchXO(event) {        //update to make use of Xchocie and Ochoice //loop for turn and their input
+function switchXO(event) {       
         let cell = event.target
         cell.textContent = currentPlayer
         
@@ -86,7 +53,7 @@ function switchXO(event) {        //update to make use of Xchocie and Ochoice //
         }            
        
     victory();
-console.log("switch");                                                           /////////////////////
+console.log("switch");                                                       
 }
 
 
@@ -95,7 +62,7 @@ function handleCount() {
 }
 
 
-function victory() {             //txtcontent here not at top cos text hasn't been updated till here ctrl+d ddddd = multicursor
+function victory() {           
 
         squareClassAll.forEach(cell => {
             
@@ -171,9 +138,7 @@ function victory() {             //txtcontent here not at top cos text hasn't be
                         console.log("It's a draw");
                         resetAppear()
                         break;
-                    default: resetAppear()
-                        ////////////////////////////////////FIX///////////////////// 
-                        
+                    default: resetAppear()                        
                     
                 }
             })
@@ -189,24 +154,24 @@ function resetAppear() {
 }
 
 function resetGrid() {
+
     for (let cell of squareClassAll){
     cell.textContent = '';
     cell.style.textDecoration = '';
     }
+
     resetBtn.style.visibility = 'hidden'
     resultClass.style.visibility = 'hidden'
     roundsClass.style.display = 'initial'
     clickCount = 0;
     roundCountIncrease();  
-    // xScore.innerText = xCount
-
 }
 
 function resultAppear() {
     resultClass.style.visibility = 'visible'
     resetBtn.style.visibility = 'visible'
     roundsClass.style.display = 'none'
-    console.log("Result + Victory");                                             //////////////////////
+    console.log("Result + Victory");                                            
 }
 
 function roundCountIncrease() {
@@ -218,35 +183,12 @@ function roundCountIncrease() {
 function startScreenRemove() {
     startScreen.style.display = 'none'
     startScreen.style.visibility = 'hidden'
-    console.log("startbtn clicked");               //////////////////////////
+    console.log("startbtn clicked");              
 }
 
 
-// --------------------------------------------------------------------------------------
-// function scoreUpdateX() {
-//     xCount = ((clickCount + 1) - clickCount)
-//     // xCount++
-//     xScore.innerText = xCount
-// }
-// function scoreUpdateO() {
-//     oCount = ((clickCount + 1) - clickCount)
-//     // oCount++
-//     oScore.innerText = oCount
-// }
 
 
 
 
 
-
-
-//                                                        dont forget @MEDIA requirements
-// @(min-width: 1000px) {
-
-// }
-
-
-
-
-
-//             make the README.txt

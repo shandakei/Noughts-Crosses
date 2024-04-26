@@ -10,7 +10,7 @@ If you are inspired, great! If you're daunted, don't be! If you're neither, then
 
 Click the link below to give my game project a try 👍
 
-[file://wsl.localhost/Ubuntu/home/shandakei/seb/projects/project_01/noughts_and_crosses/index.html]
+[https://shandakei.github.io/Noughts-Crosses/]
 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------

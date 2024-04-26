@@ -52,6 +52,8 @@ const xScore = document.querySelector('.x-score')
 const oScore = document.querySelector('.o-score')
 const roundsClass = document.querySelector('.rounds')
 const roundsCountSpan = document.querySelector('.rounds-count')
+const startBtn = document.querySelector('.start-btn')
+const startScreen = document.querySelector('.start-screen')
 
 let clickCount = 0
 let xCount = 0
@@ -62,8 +64,9 @@ let roundCount = 1
 
 
 //ELs
+startBtn.addEventListener('click', startScreenRemove)
 resetBtn.addEventListener('click', resetGrid)
-resetBtn.addEventListener('click', scoreUpdateX)
+// resetBtn.addEventListener('click', scoreUpdateX)
 // resetBtn.addEventListener('click', scoreUpdateO)
 
 for (let cell of squareClassAll) {
@@ -164,11 +167,11 @@ function victory() {             //txtcontent here not at top cos text hasn't be
                         resultAppear();        
                         resetAppear()
                         break;
-                    case (clickCount === 8):
+                    case (clickCount >= 9):
                         console.log("It's a draw");
                         resetAppear()
                         break;
-                    default: null
+                    default: resetAppear()
                         ////////////////////////////////////FIX///////////////////// 
                         
                     
@@ -212,19 +215,31 @@ function roundCountIncrease() {
     roundsCountSpan.innerText = roundCount
 }
 
+function startScreenRemove() {
+    startScreen.style.display = 'none'
+    startScreen.style.visibility = 'hidden'
+    console.log("startbtn clicked");               //////////////////////////
+}
 
 
 // --------------------------------------------------------------------------------------
-function scoreUpdateX() {
-    xCount = ((clickCount + 1) - clickCount)
-    // xCount++
-    xScore.innerText = xCount
-}
-function scoreUpdateO() {
-    oCount = ((clickCount + 1) - clickCount)
-    // oCount++
-    oScore.innerText = oCount
-}
+// function scoreUpdateX() {
+//     xCount = ((clickCount + 1) - clickCount)
+//     // xCount++
+//     xScore.innerText = xCount
+// }
+// function scoreUpdateO() {
+//     oCount = ((clickCount + 1) - clickCount)
+//     // oCount++
+//     oScore.innerText = oCount
+// }
+
+
+
+
+
+
+
 //                                                        dont forget @MEDIA requirements
 // @(min-width: 1000px) {
 
